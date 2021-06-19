@@ -28,7 +28,6 @@ const PopupCart = () => {
         <p className="popup--total-price__letter">Total estimado</p>
         <p className="popup--total-price__number">S/{totalPrice}</p>
       </div>
-      <button className="btn-cart">Ver carrito</button>
     </div>
   )
 }

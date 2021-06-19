@@ -9,17 +9,19 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import ListProducts from "./views/products/ListProducts";
 import  {CartProvider}  from "./context/CartContext";
+import ProductDetail from "./views/productDetail/ProductDetail";
 function App() {
   return (
     <div className="App">
       <CartProvider>
         <Router>
           <Header />
-          <Redirect from="/" to="/products" />
+          <Redirect exact from="/" to="/products" />
           <Switch>
-            <Route path="/products">
+            <Route exact path="/products">
               <ListProducts />
             </Route>
+            <Route exact path="/products/:id" component={ProductDetail}/>
           </Switch>
           <Footer />
         </Router>
