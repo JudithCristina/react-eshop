@@ -1,12 +1,12 @@
 import React from 'react';
 import './CardProduct.css';
 import {Card, Button } from "react-bootstrap";
-const CardProduct = () => {
+const CardProduct = (props) => {
   return (
     <Card>
-      <Card.Img variant="top" src="holder.js/100px160" />
+      <Card.Img variant="top" src={props.image} />
       <Card.Body>
-        <Card.Title>Card title</Card.Title>
+        <Card.Title>{props.title}</Card.Title>
         <Card.Text>
           This card has supporting text below as a natural lead-in to additional
           content.{' '}
@@ -14,8 +14,8 @@ const CardProduct = () => {
       </Card.Body>
       <Card.Footer>
         <div className="product-card-footer">
-          <p> S/.17</p>
-          <Button variant="primary">Go somewhere</Button>
+          <p> S/. {props.price}</p>
+          <Button variant="primary">Agregar al Carrito</Button>
         </div>
       </Card.Footer>
     </Card>

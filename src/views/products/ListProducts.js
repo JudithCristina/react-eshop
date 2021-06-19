@@ -11,10 +11,15 @@ const ListProducts = () => {
       .then(res => res.json())
       .then(json => setArrayProducts(json))
   }, []);
+  console.log(arrayProducts)
   return (
     <div className="container-list-products">
       <CardColumns>
-        <CardProduct/>
+        {
+          arrayProducts.map(item =>
+            <CardProduct title={item.title} id={item.id} price={item.price} image={item.image} description={item.description} />
+          )
+        }
       </CardColumns>
     </div>
   )
