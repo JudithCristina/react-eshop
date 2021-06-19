@@ -1,10 +1,20 @@
-import React from 'react'
-
+import React from 'react';
+import './Header.css';
+import imageCart from './../../assets/image/icon/cesta.svg'
 const Header = () => {
   return (
-    <div>
-      <p>Hola soy el header</p>
-    </div>
+    <header className="header">
+     <div className="header__wrapper">
+        <img className="header__image-logo" src="https://dcassetcdn.com/design_img/979319/148592/148592_5443374_979319_image.jpg" alt="logo" />
+        <p>Productos</p>
+       <div className="header__shopping-cart">
+          <img className="header__image-shopping-cart" src={imageCart} alt="cart" />
+          <div className="header__counter-shopping-cart">
+            <p>0</p>
+          </div>
+       </div>
+     </div>
+    </header>
   )
 }
 

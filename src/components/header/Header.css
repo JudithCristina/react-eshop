@@ -1,0 +1,38 @@
+.header {
+  width:100%; /* Establecemos que el header abarque el 100% del documento */
+  overflow:hidden; /* Eliminamos errores de float */
+  background:#fff;
+  margin-bottom:20px;
+  box-shadow: 0px 1px 10px #999;
+}
+.header__wrapper{
+  width:90%; /* Establecemos que el ancho sera del 90% */
+  max-width:1800px; /* Aqui le decimos que el ancho máximo sera de 1000px */
+  margin:auto; /* Centramos los elementos */
+  overflow:hidden; /* Eliminamos errores de float */
+  display: flex;
+  align-items: center;
+   justify-content: space-between;
+
+}
+.header__image-logo{
+  width:100px;
+  height:60px
+}
+.header__counter-shopping-cart{
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #ec608d;
+  margin: 5px;
+}
+.header__counter-shopping-cart p{
+  color:#fff;
+  text-align: center;
+  margin:0px
+}
+.header__shopping-cart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
