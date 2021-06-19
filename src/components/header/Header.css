@@ -36,3 +36,9 @@
   justify-content: center;
   align-items: center;
 }
+.hover-active{
+  visibility:hidden
+}
+ .header__shopping-cart .header__counter-shopping-cart:hover~ .hover-active{
+  visibility:visible
+}
