@@ -1,14 +1,15 @@
 import {useEffect, useState} from 'react';
-import './ProductDetail.css';
 import {
   BrowserRouter as Router,
   useParams
 } from "react-router-dom";
-
+import ButtonAddToCart from './../../components/button/ButtonAddToCart'
+import './ProductDetail.css';
 
 const ProductDetail = () => {
 const [product, setProduct] = useState('');
-const params = useParams()
+const params = useParams();
+
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${params.id}`)
       .then(res => res.json())
@@ -29,7 +30,7 @@ const params = useParams()
           <p className="price-text">S/ {product.price}</p>
 
           <div className="box-btn">
-            <button className="btn-cart">Agregar al Carrito</button>
+            <ButtonAddToCart title={product.title} id={product.id} price={product.price} image={product.image} description={product.description}/>
           </div>
         </section>
       </div>

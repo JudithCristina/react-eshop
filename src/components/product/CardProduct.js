@@ -1,15 +1,10 @@
-import React, {useContext} from 'react';
 import './CardProduct.css';
-import {Card, Button } from "react-bootstrap";
-import { CartContext } from '../../context/CartContext';
+import {Card} from "react-bootstrap";
 import { Link } from 'react-router-dom';
+import ButtonAddToCart from './../../components/button/ButtonAddToCart'
 
 const CardProduct = (props) => {
-  const [cart, setCart] = useContext(CartContext)
-  const addToCart = ()=>{
-    const product={id:props.id, title:props.title, price: props.price, description: props.description, image:props.image}
-    setCart( curr => [...curr, product])
-  }
+
   return (
 
       <Card>
@@ -26,9 +21,7 @@ const CardProduct = (props) => {
         <Card.Footer>
           <div className="product-card-footer">
             <p> S/. {props.price}</p>
-            {/* <Button onClick={addToCart} variant="primary">Agregar al Carrito</Button> */}
-              <button onClick={addToCart} className="btn-cart">Agregar al Carrito</button>
-
+          < ButtonAddToCart title={props.title} id={props.id} price={props.price} image={props.image} description={props.description} />
           </div>
         </Card.Footer>
       </Card>

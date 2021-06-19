@@ -1,10 +1,5 @@
 .container-list-products{
   padding: 1rem;
   max-width: 1800px;
-  margin: 0 auto;
-}
-.product-card-footer{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin: 5rem auto;
 }

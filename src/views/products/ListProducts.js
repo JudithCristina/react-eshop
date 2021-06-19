@@ -11,7 +11,7 @@ const ListProducts = () => {
       .then(res => res.json())
       .then(json => setArrayProducts(json))
   }, []);
-  console.log(arrayProducts)
+
   return (
     <div className="container-list-products">
       <CardColumns>
