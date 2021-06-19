@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './CardProduct.css';
 import {Card, Button } from "react-bootstrap";
+import { CartContext } from '../../context/CartContext';
+
 const CardProduct = (props) => {
+  const [cart, setCart] = useContext(CartContext)
   const addToCart = ()=>{
-    console.log('clickeame aqui')
+    const product={id:props.id, title:props.title, price: props.price, description: props.description, image:props.image}
+    setCart( curr => [...curr, product])
   }
   return (
     <Card>

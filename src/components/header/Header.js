@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from './../../context/CartContext'
 import './Header.css';
 import imageCart from './../../assets/image/icon/cesta.svg';
 import PopupCart from './../popup/PopupCart'
 const Header = () => {
+  const [cart] = useContext(CartContext)
   return (
     <header className="header">
      <div className="header__wrapper">
@@ -11,7 +13,7 @@ const Header = () => {
        <div className="header__shopping-cart">
           <img className="header__image-shopping-cart" src={imageCart} alt="cart" />
           <div className="header__counter-shopping-cart">
-            <p>0</p>
+            <p>{cart.length}</p>
           </div>
           <div className="hover-active">
             <PopupCart />

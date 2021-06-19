@@ -8,19 +8,22 @@ import {
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import ListProducts from "./views/products/ListProducts";
+import  {CartProvider}  from "./context/CartContext";
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <Redirect from="/" to="/products" />
-        <Switch>
-          <Route path="/products">
-            <ListProducts />
-          </Route>
-        </Switch>
-        <Footer />
-      </Router>
+      <CartProvider>
+        <Router>
+          <Header />
+          <Redirect from="/" to="/products" />
+          <Switch>
+            <Route path="/products">
+              <ListProducts />
+            </Route>
+          </Switch>
+          <Footer />
+        </Router>
+      </CartProvider>
     </div>
   );
 }
